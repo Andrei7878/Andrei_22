@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+
+<div class = "col-md-8 offset-md-2">
+    <h1>{{ news.title }}</h1>
+    <small>
+        {{ news.created_on.date }} |&nbsp;
+        Категории:&nbsp;
+        {% for category in news.categories.all %}
+        <a href="{% url 'news_category' category.name %}">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %}
+    </small>
+    <h3>About:</h3>
+    <p>{{ news.body | linebreaks }}</p>
+</div>
+
+{% endblock %}

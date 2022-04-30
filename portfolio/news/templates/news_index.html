@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+<div class = "col-md-8 offset-md-2">
+    <h1>News</h1>
+    <hr>
+    {% for news in news %}
+    <h2><a href="{% url 'news_detail' news.pk %}">{{ news.title }}</a></h2>
+    <small>
+        {{ news.created_on.date }} |&nbsp;
+        Categories:&nbsp;
+        {% for category in news.categories.all %}
+        <a href="{% url 'news_category' category.name %}">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %}
+    </small>
+    <div >
+        <img class="card-img-top" src="{% static news.image %}" style="width:330px">
+        <br>
+        <a href="{% url 'news_detail' news.pk %}">
+            <button type="button" class="btn btn-dark"><font size="2" color="white" face="Verdana">Read more</font></button>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

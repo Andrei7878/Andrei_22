@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+<html>
+<div class="row">
+    <div class = "col-md-4 offset-md-2">
+        <h1>{{ project.title }}</h1>
+        <center>
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static project.image %}" width="30%">
+        </div>
+        <div class='col-md-4'>
+            <h5>About:</h5>
+            <p>{{ project.description }}</p>
+            <br>
+            <h5>Technologies:</h5>
+            <p>{{ project.technology }}</p>
+        </div>
+        </center>
+
+    </div>
+
+</div>
+</html>
+{% endblock %}

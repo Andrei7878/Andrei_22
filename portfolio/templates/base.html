@@ -1,0 +1,70 @@
+
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css" integrity="sha384-zEpdAL7W11eTKeoBJK1g79kgl9qjP7g84KfK3AZsuonx38n8ad+f5ZgXtoSDxPOh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" integrity="sha384-ejwKkLla8gPP8t2u0eQyL0Q/4ItcnyveF505U0NIobD/SMsNyXrLti6CWaD0L52l" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="{% url 'project_index' %}"><i class="bi bi-droplet" style="font-size:22px"></i> Main</a>
+  <a href="{% url 'news_index' %}">News</a>
+  <a href="#contact">Galery</a>
+  <a href="{% url 'blog_index' %}">Blog</a>
+  <div class="topnav-right">
+    <a href="#instagram"><i class="bi bi-instagram" style="font-size:26px"></i></a>
+    <a href="https://www.linkedin.com/feed/" target="_blank"><i class="bi-linkedin" style="font-size:26px"></i></a>
+    <a href="https://github.com/Andrei7878" target="_blank"><i class="bi-github" style="font-size:26px"></i></a>
+    <a href="https://www.google.com" target="_blank">Search</a>
+  </div>
+</div>
+</body>
+</html>
+{% block page_content %}
+{% endblock %}
+<style>
+   footer {
+   background: #333; /* Цвет фона */
+   color: white; /* Цвет текста */
+   }
+  </style>
+<footer class="bd-footer p-2 p-md-2 mt-2 text-center">
+<div class="container">
+    <p><font size="3" color="white" face="Verdana">Design by A.V.</font></p>
+</div>
+</footer>
