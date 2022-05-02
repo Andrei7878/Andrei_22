@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+
+<div class = "col-md-8 offset-md-2">
+    <h1>{{ gallery.title }}</h1>
+    <small>
+        {{ gallery.created_on.date }} |&nbsp;
+        Category:&nbsp;
+        {% for category in gallery.categories.all %}
+        <a href="{% url 'gallery_category' category.name %}">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %}
+    </small>
+    <h3>About:</h3>
+    <p>{{ gallery.body | linebreaks }}</p>
+</div>

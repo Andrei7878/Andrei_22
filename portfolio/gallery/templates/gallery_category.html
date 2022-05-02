@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block page_content %}
+<div class = "col-md-8 offset-md-2">
+    <h1>{{ category | title }}</h1>
+    <hr>
+    {% for gallery in gallery %}
+    <h2><a href="{% url 'gallery_detail' gallery.pk %}">{{ gallery.title }}</a></h2>
+    <small>
+        {{ gallery.created_on.date }} |&nbsp;
+        Categories:&nbsp;
+        {% for category in gallery.categories.all %}
+        <a href="{% url 'gallery_category' category.name %}">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %}
+    </small>
+    <h3>About:</h3>
+    <p>{{ gallery.body | slice:":400" }}...</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -3,7 +3,7 @@
 <div class = "col-md-8 offset-md-2">
     <h1>{{ category | title }}</h1>
     <hr>
-    {% for news in newss %}
+    {% for news in news %}
     <h2><a href="{% url 'news_detail' news.pk %}">{{ news.title }}</a></h2>
     <small>
         {{ news.created_on.date }} |&nbsp;
